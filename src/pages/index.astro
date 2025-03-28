@@ -4,38 +4,43 @@ import "../styles/global.css";
 ---
 
 <Layout>
-	<header class="bg-white shadow-lg shadow-black/10 p-4 fixed w-full z-1000 top-0 left-0 h-[70px]" >
-		<div class="max-w-[1200px] -ml-2 px-5 flex items-center justify-between h-full">
+	<header class="bg-white shadow-lg shadow-black/10 p-4 fixed w-full z-[1000] top-0 left-0 h-[70px]">
+		<div class="max-w-[1200px] mx-auto px-5 flex items-center justify-between h-full">
 			<div class="flex items-center">
 				<a href="/">
-					<img src="./football-jersey.svg" alt="logo" class="h-[40px] ">
+					<img src="./football-jersey.svg" alt="logo" class="h-[40px]">
 				</a>
 			</div>
-			
-			<nav class="flex items-center">
-				<ul class="flex gap-5 ">
-					<li><a href="#" class="text-[555] font-[500] py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-green-400 active:text-[#4a6cf7] active:bg-green-100">Fútbol</a></li>
-					<li><a href="#" class="text-[555] font-[500] py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-red-400 active:text-[#4a6cf7] active:bg-red-100">Basketball</a></li>
-					<li><a href="#" class="text-[555] font-[500] py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:text-white hover:bg-black active:text-[#4a6cf7] active:bg-gray-200">Fórmula 1</a></li>
-								
+	
+			<nav class="flex-1 flex justify-center">
+				<ul class="flex gap-10">
+					<li>
+						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-green-400 active:text-[#4a6cf7] active:bg-green-100">
+							Fútbol
+						</a>
+					</li>
+					<li>
+						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-red-400 active:text-[#4a6cf7] active:bg-red-100">
+							Basketball
+						</a>
+					</li>
+					<li>
+						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:text-white hover:bg-black active:text-[#4a6cf7] active:bg-gray-200">
+							Fórmula 1
+						</a>
+					</li>
 				</ul>
-			</nav>	
-			<div class="flex gap-5 -mr-70">
-				<div class="px-4 py-2 rounded font-[500] cursor-pointer transition-all duration-300 ease-in-out border-none">
-					<a href="" id="btn-login" class="mr-1 py-2 px-3 rounded bg-transparent p-1 border border-[#4a6cf7] text-[#4a6cf7] hover:bg-[rgba(74,108,247,0.1)]">
+			</nav>  
+			<div class="flex items-center gap-5">
+				<div class="flex gap-3">
+					<a href="#" id="btn-login" class="py-2 px-3 rounded border border-[#4a6cf7] text-[#4a6cf7] hover:bg-[rgba(74,108,247,0.1)]">
 						Iniciar sesión
 					</a>
-					<a href="" id="btn-register" class="text-white py-2 px-3  bg-[#4a6cf7] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#3a5bd9] active:bg-[rgba(74,108,247,0.1)]">
-						Registarse
+					<a href="#" id="btn-register" class="text-white py-2 px-3 bg-[#4a6cf7] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#3a5bd9] active:bg-[rgba(74,108,247,0.1)]">
+						Registrarse
 					</a>
-				</div>
-			</div>
-			<div class="flex items-center -mr-35">
-				<a href="">
-					<img src="./cart.svg" alt="cart" class="h-[30px]">
-				</a>
 			</div>
 		</div>
-
-	</header>
+	</header>	
+	
 </Layout>
