@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
----
+import { supabase } from "../lib/supabase";
 
+const { data: camisetas, error } = await supabase
+  .from("camisetas")
+  .select("*")
+  .order("fecha_index", { ascending: false })
+  .limit(3);
+
+if (error) console.error("Error cargando camisetas:", error);
+---
 <Layout>
 	<header class="bg-white shadow-lg shadow-black/10 p-4 fixed w-full z-[1000] top-0 left-0 h-[70px]">
 		<div class="max-w-[1200px] mx-auto px-5 flex items-center justify-between h-full">
@@ -42,5 +50,6 @@ import "../styles/global.css";
 			</div>
 		</div>
 	</header>	
-	
+	<body>
+	</body>
 </Layout>
