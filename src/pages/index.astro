@@ -3,52 +3,53 @@ import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 import { supabase } from "../lib/supabase";
 
-const { data: camisetas, error } = await supabase
-  .from("camisetas")
-  .select("*")
-  .order("fecha_index", { ascending: false })
-  .limit(3);
-
-if (error) console.error("Error cargando camisetas:", error);
 ---
 <Layout>
-	<header class="bg-white shadow-lg shadow-black/10 p-4 fixed w-full z-[1000] top-0 left-0 h-[70px]">
+	<header class="p-4 relative w-full z-[1000] top-0 left-0 h-[70px] border-b-[2px] border-transparent">
 		<div class="max-w-[1200px] mx-auto px-5 flex items-center justify-between h-full">
 			<div class="flex items-center">
-				<a href="/">
+				<a href="/">	
 					<img src="./football-jersey.svg" alt="logo" class="h-[40px]">
 				</a>
 			</div>
 	
 			<nav class="flex-1 flex justify-center">
-				<ul class="flex gap-10">
+				<ul class="flex gap-10 text-white ">
 					<li>
-						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-green-400 active:text-[#4a6cf7] active:bg-green-100">
+						<a href="#" class="font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-green-400 active:text-[#4a6cf7] active:bg-green-100">
 							Fútbol
 						</a>
 					</li>
 					<li>
-						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-red-400 active:text-[#4a6cf7] active:bg-red-100">
+						<a href="#" class="font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:bg-red-400 active:text-[#4a6cf7] active:bg-red-100">
 							Basketball
 						</a>
 					</li>
 					<li>
-						<a href="#" class="text-gray-700 font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:text-white hover:bg-black active:text-[#4a6cf7] active:bg-gray-200">
+						<a href="#" class="font-medium py-2 px-3 rounded-sm transition-all duration-300 ease-in-out hover:text-white hover:bg-black active:text-[#4a6cf7] active:bg-gray-200">
 							Fórmula 1
 						</a>
 					</li>
 				</ul>
-			</nav>  
+			</nav>
+			<div class="w-[300px] h-[45px] rounded-[15px] cursor-pointer transition duration-300 ease-in-out bg-gradient-to-br from-[#DA544A] via-[#DA544A]/0 to-[#DA544A]/0 bg-[#2D404B]/20 flex items-center justify-center outline-none">
+				<input type="text" placeholder="Buscar" name="text" id="search" class="w-[298px] h-[43px] px-4 rounded-[13px] ml-0.5 bg-[#1a1a1a] text-white font-semibold outline-none focus:shadow-[0_0_10px_rgba(45,64,75,1)] focus:ring-0"> 
+			</div>  
 			<div class="flex items-center gap-5">
 				<div class="flex gap-3">
-					<a href="#" id="btn-login" class="py-2 px-3 rounded border border-[#4a6cf7] text-[#4a6cf7] hover:bg-[rgba(74,108,247,0.1)]">
-						Iniciar sesión
-					</a>
-					<a href="#" id="btn-register" class="text-white py-2 px-3 bg-[#4a6cf7] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#3a5bd9] active:bg-[rgba(74,108,247,0.1)]">
-						Registrarse
-					</a>
+					<div onclick="document.getElementById('loginDropdown').classList.toggle('hidden')" class="w-[131px] h-[45px] ml-2 rounded-[15px] cursor-pointer transition duration-300 ease-in-out bg-gradient-to-br from-[#DA544A] via-[#DA544A]/0 to-[#DA544A]/0 bg-[#2D404B]/20 flex items-center justify-center hover:bg-[#DA544A]/70 hover:shadow-[0_0_10px_rgba(45,64,75,0.5)] focus:outline-none">
+						<div class="w-[127px] h-[43px] rounded-[13px] bg-[#1a1a1a] flex items-center justify-center gap-[15px] text-white font-semibold">
+							<svg aria-hidden="true"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[27px] h-[27px] fill-white">
+								<g data-name="Layer 2" id="Layer_2">
+									<path d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
+								</g>
+							</svg>
+							<p>Log In</p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
+		<div class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#DA544A] to-transparent">
 	</header>	
 	<body>
 	</body>
