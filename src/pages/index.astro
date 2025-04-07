@@ -53,23 +53,23 @@ import { supabase } from "../lib/supabase";
 									<path d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
 								</g>
 							</svg>
-							<p id="login-text">Log In</p>
+							<p id="login-text">Login</p>
 						</div>
 					</div>
 					<div id="loginDropdown" class="absolute right-0 top-full mt-4 w-[320px] bg-[#1a1a1a] text-white rounded-xl shadow-lg hidden z-50">
 						
 						<!-- Card background -->
-						<div id="card" class="rounded-[22px] w-full h-auto transition-all duration-300 hover:shadow-[0_0_30px_1px_rgba(0,255,117,0.3)]" style="background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);">
+						<div id="card" class="rounded-[22px] w-full h-auto transition-all duration-300 hover:shadow-[0_0_30px_1px_rgba(0,255,117,0.3)]" style="background-image: linear-gradient(163deg, #DA544A 0%, #2D404B 100%);">
 							<div id="card2" class="w-full h-auto rounded-[0px] transition-all duration-200 hover:scale-[0.98] hover:rounded-[30px]">
 								<form id="form" class="flex flex-col gap-6 p-6 bg-[#171717] rounded-[25px]">
-									<p id="heading" class="text-center text-white text-[1.2em]">Login</p>
+									<p id="heading" class="text-center text-white text-[1.2em]">Iniciar sesión</p>
 
-									<!-- Username Input -->
+									<!-- Email Input -->
 									<div class="flex items-center gap-3 bg-[#252525] p-3 rounded-[15px]">
 										<svg class="h-[1.3em] w-[1.3em] fill-white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 											<path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
 										</svg>
-										<input class="bg-transparent border-none outline-none w-full text-[#d3d3d3]" type="text" placeholder="Username" autocomplete="off" />
+										<input id="email" class="bg-transparent border-none outline-none w-full text-[#d3d3d3]" type="email" placeholder="Email" autocomplete="off" />
 									</div>
 									
 									<!-- Password Input -->
@@ -77,20 +77,22 @@ import { supabase } from "../lib/supabase";
 										<svg class="h-[1.3em] w-[1.3em] fill-white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 											<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
 										</svg>
-										<input class="bg-transparent border-none outline-none w-full text-[#d3d3d3]" type="password" placeholder="Password" />
+										<input id="password" class="bg-transparent border-none outline-none w-full text-[#d3d3d3]" type="password" placeholder="Password" />
 									</div>
 									
 									<!-- Buttons -->
 									<div class="flex justify-around">
-										<button class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">Login</button>
-										<button id="btn-google" class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">
+										<button id="btn-login" class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">Iniciar sesión</button>
+										<!-- <button id="btn-google" class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">
 											<img src="./google.svg" class="w-[40px]">
-										</button>
-										<button class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">Sign Up</button>
+										</button> -->
+										<a href="/register" id="btn-sign" class="p-2 px-4 rounded-md bg-[#252525] text-white hover:bg-black transition">
+											Registrarse
+										</a>
 									</div>
 									
 									<!-- Button Forgot Password -->
-									<button class="p-2 rounded-md bg-[#252525] text-white hover:bg-red-500 transition">Forgot Password</button>
+									<button class="p-2 rounded-md bg-[#252525] text-white hover:bg-red-500 transition">¿Olvidó su contraseña?</button>
 								</form>
 							</div>
 						</div>
@@ -100,9 +102,39 @@ import { supabase } from "../lib/supabase";
 		<div class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#DA544A] to-transparent">
 	</header>
 	<script>
-        import { setupDropdownLogin } from '../scripts/dropdownLogin';
+		import { setupDropdownLogin } from '../scripts/dropdownLogin';
+		import { verifyUser } from '../scripts/auth';
+	
 		setupDropdownLogin();
-    </script>	
+	
+		document.addEventListener('DOMContentLoaded', () => {
+			const loginButton = document.getElementById('btn-login');
+			const emailInput = document.getElementById('email');
+			const passwordInput = document.getElementById('password');
+			const loginText = document.getElementById('login-text');
+	
+			if (loginButton && emailInput && passwordInput) {
+				loginButton.addEventListener('click', async (event) => {
+					event.preventDefault();
+					const email = emailInput.value.trim();
+					const password = passwordInput.value.trim();
+	
+					if (email && password) {
+						const success = await verifyUser(email, password);
+						if (success) {
+							const { data: user } = await supabase.auth.getUser();
+							if (user) {
+								loginText.textContent = user.user_metadata?.name || user.email || 'Usuario';
+							}
+					
+						}
+					} else {
+						alert('Por favor, completa todos los campos.');
+					}
+				});
+			}
+		});
+	</script>
 	<body>
 	</body>
 </Layout>
